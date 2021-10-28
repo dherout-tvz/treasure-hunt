@@ -1,26 +1,32 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <section>
+    <o-field label="Name">
+      <o-input v-model="name" placeholder="What is your name?"></o-input>
+    </o-field>
+    <o-button @click="clickMe">Clear Name</o-button>
+  </section>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  data() {
+      return {
+        name: ''
+      }
+    },
+  methods: {
+      clickMe() {
+        this.name = ''
+      }
+    }
   }
-}
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  margin-top: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
 }
 </style>
